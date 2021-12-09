@@ -1,10 +1,10 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Cursos create')
+@section('title', 'Cursos edit')
     
 @section('content')
-    <h1>create from cursocontroller";</h1>
-    <form action="{{route('cursos.store')}}" method="post">
+    <h1>Editando curso</h1>
+    <form action="{{route('cursos.edit')}}" method="post">
         @csrf
         
         <label for="">
@@ -22,6 +22,6 @@
             <input type="text" name="categoria" id="">
         </label>
 
-        <button type="submit">Send</button>
+        <button type="submit">Update</button>
     </form>
-@endsection
+@endsection 
