@@ -10,5 +10,7 @@
 </head>
 <body>
     @yield('content')
+    
+    <a href="{{route('cursos.index')}}">Volver</a><br>
 </body>
 </html>

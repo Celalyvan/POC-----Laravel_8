@@ -4,24 +4,42 @@
     
 @section('content')
     <h1>create from cursocontroller";</h1>
+    
+    
     <form action="{{route('cursos.store')}}" method="post">
         @csrf
         
         <label for="">
             Nombre<br>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{old('name')}}">
         </label>
+        @error('name')
+            <br>
+            <small style="color: red">*{{$message}}</small>
+            <br>
+        @enderror
         <br>
+
         <label for="">
             Descpripcion<br>
-            <textarea name="descripcion" id="" cols="30" rows="5"></textarea>
+            <textarea name="descripcion" id="" cols="30" rows="5">{{old('descripcion')}}</textarea>
         </label>
+        @error('descripcion')
+            <br>
+            <small style="color: red">*{{$message}}</small>
+            <br>
+        @enderror
         <br>
+
         <label for="">
             Categoria<br>
-            <input type="text" name="categoria" id="">
+            <input type="text" name="categoria" id="" value="{{old('categoria')}}">
         </label>
-
+        @error('categoria')
+            <br>
+            <small style="color: red">*{{$message}}</small>
+            <br>
+        @enderror
         <button type="submit">Send</button>
     </form>
 @endsection
