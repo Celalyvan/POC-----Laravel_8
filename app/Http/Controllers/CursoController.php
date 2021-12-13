@@ -48,7 +48,6 @@ class CursoController extends Controller
         
         $curso = Curso::create($request->all());//de esta forma se instancia el objeto de tipo curso con sus atributos, etc... internamente se encarga de eliminar el atributo del token generado por seguridad en el formulario (para hacer esto chequea las columnas que tenga la base de datos para decidir que dejar) y por ultimo lo inserta en la base de datos
 
-
         return redirect()->route('cursos.show',$curso->id); //Laravel es capaz de interpretar que tiene qe usar la id de este objeto, entonces si pasara $curso seria igualmente funcional
     }
 
@@ -77,5 +76,12 @@ class CursoController extends Controller
         $curso->save();
 
         return view('cursos.show', compact('curso'));
+    }
+
+    public function destroy(Curso $curso)
+    {
+        $curso->delete();
+
+        return redirect()->route('cursos.index');
     }
 }

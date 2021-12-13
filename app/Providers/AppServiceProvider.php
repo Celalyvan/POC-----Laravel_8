@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,8 +22,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot() 
     {
-        //
+        Route::resourceVerbs(['create' => 'crear','edit' => 'editar',]); //este metodo me permite cambiar el nombre de acceso a los metodos de la url
     }
 }
