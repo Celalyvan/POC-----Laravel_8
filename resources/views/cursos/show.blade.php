@@ -17,7 +17,7 @@
     <form action="{{route('cursos.destroy', $curso)}}" method="POST">
         @csrf
         @method('delete')
-        <button type="submit">
+        <button type="submit" style="color: rgb(16, 156, 191)">
             Eliminar
         </button>
     </form>

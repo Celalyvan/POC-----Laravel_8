@@ -40,6 +40,6 @@
             <small style="color: red">*{{$message}}</small>
             <br>
         @enderror
-        <button type="submit">Send</button>
+        <button type="submit" style="color: rgb(16, 156, 191)">Send</button>
     </form>
 @endsection

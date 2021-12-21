@@ -40,6 +40,6 @@
             <br>
         @enderror
 
-        <button type="submit">Update</button>
+        <button type="submit" style="color: rgb(16, 156, 191)" >Update</button>
     </form>
 @endsection 

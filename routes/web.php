@@ -15,7 +15,7 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeCotroller::class);
+Route::get('/', HomeCotroller::class)->name('home');
 
 // Route::get('cursos', CursoCotroller::class); en caso de yo dejar la sentencia de esta forma Laravel buscaria automaticamente el metodo invoke de la clase CursoController. Pero siendo que puede ser llamado de varias formas, no fue creado, consecuentemente, no lo va a encontrar
 /*
@@ -38,3 +38,5 @@ Route::delete('cursos/{curso}',[CursoController::class, 'destroy'])->name('curso
 
 
 Route::resource('cursos', CursoController::class);
+
+Route::view('nosotros','nosotros')->name('nosotros'); // se usa el route view solamente cuando se quiere mostrar contenido estatico
